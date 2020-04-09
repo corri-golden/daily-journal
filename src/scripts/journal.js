@@ -1,76 +1,61 @@
-console.log("pop")
-
+/*
+    Define the keys and value for a JavaScript object that
+    represents a journal entry about what you learned today
+*/
 const journalEntry = {
-    dateOfEntry: "11/01/2019",
-    conceptsCovered: "Objects",
-    journalEntry: "1",
-    moodOfTheDay: "Happy",
+    date: "1/1/2020",
+    title: "JavaScript",
+    contents: "Functions",
+    mood: "sad"
+
 }
 
-console.log(journalEntry.dateOfEntry)
-
-// let journalEntries = []
-// journalEntries.push(journalEntry)
-// console.log(journalEntries)
-
-let secondEntry = {
-    dateOfEntry: "11/02/2019",
-    conceptsCovered: "Arrays",
-    journalEntry: "2",
-    moodOfTheDay: "Sad",
+const journalEntry2 = {
+    date: "2/2/2020",
+    title: "React",
+    contents: "Capstone",
+    mood: "happy"
 }
 
-let thirdEntry = {
-    dateOfEntry: "11/03/2019",
-    conceptsCovered: "Objects",
-    journalEntry: "3",
-    moodOfTheDay: "Happy",
+const journalEntry3 = {
+    date: "3/3/2020",
+    title: "Django",
+    contents: "Full Stack",
+    mood: "Very Happy" 
 }
 
-// journalEntries.push(secondEntry, thirdEntry)
-// console.log("journalEntries")
+const entries= [""]
 
-let journalEntries = [
-    {
-        dateOfEntry: "11/01/2019",
-        conceptsCovered: "Objects",
-        journalEntry: "1",
-        moodOfTheDay: "Happy",
-    },
+entries.push(journalEntry)
+entries.push(journalEntry2)
+entries.push(journalEntry3)
 
-    {
-        dateOfEntry: "11/02/2019",
-        conceptsCovered: "Arrays",
-        journalEntry: "2",
-        moodOfTheDay: "Sad",
-    },
-
-    {
-        dateOfEntry: "11/03/2019",
-        conceptsCovered: "Objects",
-        journalEntry: "3",
-        moodOfTheDay: "Happy",
-    }
-]
+console.log(entries, "entries")
 
 
-const makeJournalEntryComponent = (journalEntry) => {
-    return `
-    <h1>Array Methods</h1>
-    <h2>We learned about array methods, but only for Each made sense.</h2>
-    <h2>07/24/2019</h2>
-    `
-}
-console.log(makeJournalEntryComponent)
 
-const renderDom = {
-    renderJournalEntries(entries) {
-        let HtmlForAllEntries = ""
-        journalEntries.forEach(entry => {
-            const entryHTML = makeJournalEntryComponent(entry)
-            HtmlForAllEntries += entryHTML
-        })
-        const logArticle = document.querySelector(".entryLog")
-        logArticle.innerHTML = HtmlForAllEntries
-    }
-}
+// const makeJournalEntryComponent = () => {
+//     return `
+//     <h1>Array Methods</h1>
+//     <h2>We learned about array methods, but only for Each made sense.</h2>
+//     <h2>07/24/2019</h2>
+//     `
+// }
+
+
+// const renderDom = document.querySelector(".entryLog")
+// renderDom.innerHTML = makeJournalEntryComponent()
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
