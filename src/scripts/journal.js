@@ -2,35 +2,61 @@
     Define the keys and value for a JavaScript object that
     represents a journal entry about what you learned today
 */
-const journalEntry = {
+const journalEntries = [
+    {
     date: "1/1/2020",
     title: "JavaScript",
     contents: "Functions",
     mood: "sad"
 
-}
-
-const journalEntry2 = {
+    },
+    {
     date: "2/2/2020",
     title: "React",
     contents: "Capstone",
     mood: "happy"
-}
-
-const journalEntry3 = {
+    },
+    {
     date: "3/3/2020",
     title: "Django",
     contents: "Full Stack",
     mood: "Very Happy" 
+    }
+]
+
+
+
+const makeJournalEntryComponent = (title, date, contents) => {
+    return `
+        <h1>${title}</h1>
+        <h2>${date}</h2>
+        </h3>${contents}</h3>
+    `
 }
 
-const entries= [""]
 
-entries.push(journalEntry)
-entries.push(journalEntry2)
-entries.push(journalEntry3)
 
-console.log(entries, "entries")
+    // for (const journalEntry of journalEntries){
+    //     const journalContainer = document.querySelector("#entrylog")
+    //     journalContainer.innerHTML = makeJournalEntryComponent()
+    // }
+
+    const renderJournalEntries = (entries) => {
+        for (const journalEntry of journalEntries){
+
+        
+
+        const journalContainer = document.querySelector(".entryLog")
+        journalContainer.innerHTML += makeJournalEntryComponent(
+            journalEntry.title,
+            journalEntry.date,
+            journalEntry.contents)
+        }
+    }
+
+    console.log(journalEntries)
+    renderJournalEntries(journalEntries)
+
 
 
 
