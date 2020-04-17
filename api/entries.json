@@ -1,0 +1,25 @@
+{
+   "entries": [
+    {
+    "id": 1,
+    "date": "1/1/2020",
+    "title": "JavaScript",
+    "contents": "Functions",
+    "mood": "sad"
+    },
+    {
+    "id": 2,
+    "date": "2/2/2020",
+    "title": "React",
+    "contents": "Capstone",
+    "mood": "happy"
+    },
+    {
+    "id": 3,
+    "date": "3/3/2020",
+    "title": "Django",
+    "contents": "Full Stack",
+    "mood": "Very Happy" 
+    }
+]
+}
