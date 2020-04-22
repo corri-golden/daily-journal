@@ -1,53 +1,31 @@
+
+
+
+
+
+
+
+
 /*
-    Define the keys and value for a JavaScript object that
-    represents a journal entry about what you learned today
+    Main application logic that uses the functions and objects
+    defined in the other JavaScript files.
+
+    Change the fake variable names below to what they should be
+    to get the data and display it.
 */
+// objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
 
 
 
-const makeJournalEntryComponent = (entry) => {
-    return `
-        <h1>${entry.title}</h1>
-        <h2>${entry.date}</h2>
-        </h3>${entry.contents}</h3>
-    `
-}
-
-
-// Fetch from the API
-    fetch("http://localhost:3000/entries") 
-    .then(entries => entries.json())  // Parse as JSON
-    .then(parsedEntries => {
-        parsedEntries.forEach(entry => {
-        console.log(makeJournalEntryComponent(entry))
-        const journalContainer = document.querySelector(".entryLog")
-        journalContainer.innerHTML += makeJournalEntryComponent(entry)
-        // What should happen when we finally have the array?
-    })
-})
-
-
-
-
-
+// Calling getJournalEntries method on API object from api.js
+API.getJournalEntries()
+    // .then waits for getJournalEntries to resolve then sends the JSON response to renderDom where it's passed into renderJournalEntries
+    .then(entries => renderJournalEntries(entries))
 
     
 
-    // const renderJournalEntries = (entries) => {
-    //     for (const journalEntry of journalEntries){
+    
 
-        
-
-    //     const journalContainer = document.querySelector(".entryLog")
-    //     journalContainer.innerHTML += makeJournalEntryComponent(
-    //         journalEntry.title,
-    //         journalEntry.date,
-    //         journalEntry.contents)
-    //     }
-    // }
-
-    // console.log(journalEntries)
-    // renderJournalEntries(journalEntries)
 
 
 
