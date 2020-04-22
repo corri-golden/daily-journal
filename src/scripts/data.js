@@ -26,3 +26,6 @@ getJournalEntries () {
     }
 }
 
+
+export default API
+
