@@ -1,25 +1,46 @@
 {
-   "entries": [
+  "entries": [
     {
-    "id": 1,
-    "date": "1/1/2020",
-    "title": "JavaScript",
-    "contents": "Functions",
-    "mood": "sad"
+      "id": 1,
+      "date": "1/1/2020",
+      "entry": "JavaScript",
+      "concept": "Functions",
+      "mood": "sad"
     },
     {
-    "id": 2,
-    "date": "2/2/2020",
-    "title": "React",
-    "contents": "Capstone",
-    "mood": "happy"
+      "id": 2,
+      "date": "2/2/2020",
+      "entry": "React",
+      "concept": "Capstone",
+      "mood": "happy"
     },
     {
-    "id": 3,
-    "date": "3/3/2020",
-    "title": "Django",
-    "contents": "Full Stack",
-    "mood": "Very Happy" 
+      "id": 3,
+      "date": "3/3/2020",
+      "entry": "Django",
+      "concept": "Full Stack",
+      "mood": "Very Happy"
+    },
+    {
+      "date": "2020-04-02",
+      "concept": "What's cracking",
+      "entry": "d",
+      "id": 5,
+      "mood": "sad"
+    },
+    {
+      "date": "2020-04-07",
+      "concept": "IKDD",
+      "entry": "Ebay",
+      "mood": "Happy",
+      "id": 6
+    },
+    {
+      "date": "2020-04-06",
+      "concept": "Json",
+      "entry": "My eyes hurt",
+      "mood": "Happy",
+      "id": 7
     }
-]
+  ]
 }

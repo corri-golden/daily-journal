@@ -23,8 +23,19 @@ getJournalEntries () {
         return fetch("http://localhost:3000/entries")
 // .then waits for the fetch call to complete then converts the data (response) into JSON format.
             .then(response => response.json())
+    },
+
+saveEntryToAPI(newJournalEntry){
+        return fetch("http://localhost:3000/entries", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newJournalEntry)
+        })
     }
 }
+
 
 
 export default API

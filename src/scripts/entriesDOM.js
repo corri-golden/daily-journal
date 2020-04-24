@@ -7,15 +7,18 @@ let entryLog = document.querySelector("#entryLog")
 let newJournalEntryHTML = ""
 
 //iterate through array of journal entries and add them to DOM
-const renderJournalEntries = (entries) => {
+const domEntries = {
+    renderJournalEntries (entries) {
     entries.forEach(entry => {
         newJournalEntryHTML += makeJournalEntryComponent(entry)
         entryLog.innerHTML = newJournalEntryHTML
+    
     })
+}
 }
 
 console.log(entryLog, "entryLog")
 
 
 
-export default renderJournalEntries
+export default domEntries

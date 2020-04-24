@@ -7,9 +7,10 @@
 
 const makeJournalEntryComponent = (journalEntry) => {
     return `
-        <h1>${journalEntry.title}</h1>
+        <h1>${journalEntry.concept}</h1>
         <h2>${journalEntry.date}</h2>
-        </h3>${journalEntry.contents}</h3>
+        <h3>${journalEntry.entry}</h3>
+        <h3>${journalEntry.mood}</h3>
     `
 }
 
