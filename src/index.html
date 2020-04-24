@@ -24,17 +24,17 @@
         </fieldset>
         <fieldset>
             <label for="mood-input">Mood</label>
-            <select class="mood" name="mood-input">
+            <select id="mood" name="mood-input">
                 <option value="Happy">Happy</option>
                 <option value="Fine">Fine</option>
                 <option value="Sad">Sad</option>
             </select>
         </fieldset>
-        <button>Record Journal Entry</button>
+        <button id="recordEntry">Record Journal Entry</button>
     </form>
-    <article class="entryLog">
+    <article id="entryLog">
     </article>
-    <script src="./scripts/journal.js"></script>
+    <script type="module" src="./scripts/journal.js"></script>
 </body>
 
 </html>

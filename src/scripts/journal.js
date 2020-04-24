@@ -1,76 +1,85 @@
+import API from "./data.js"
+import domEntries from "./entriesDOM.js"
+
+
+
+
+
+
+
+
 /*
-    Define the keys and value for a JavaScript object that
-    represents a journal entry about what you learned today
+    Main application logic that uses the functions and objects
+    defined in the other JavaScript files.
+
+    Change the fake variable names below to what they should be
+    to get the data and display it.
 */
-const journalEntries = [
-    {
-    date: "1/1/2020",
-    title: "JavaScript",
-    contents: "Functions",
-    mood: "sad"
+// objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
 
-    },
-    {
-    date: "2/2/2020",
-    title: "React",
-    contents: "Capstone",
-    mood: "happy"
-    },
-    {
-    date: "3/3/2020",
-    title: "Django",
-    contents: "Full Stack",
-    mood: "Very Happy" 
+
+
+// Calling getJournalEntries method on API object from api.js
+API.getJournalEntries()
+    // .then waits for getJournalEntries to resolve then sends the JSON response to renderDom where it's passed into renderJournalEntries
+    .then(entries => domEntries.renderJournalEntries(entries))
+
+
+
+//Collect Form Field Values
+//1. Use document.querySelector to select your input fields.
+//2. Use the .value property on the input field elements to get the text that you typed/chose.
+
+
+
+
+
+//event listener for recording journal entry
+//1st target the element
+const recordEntryBtn = document.querySelector("#recordEntry")
+
+const createJournalEntry = (journalDate, concepts, journalEntry, mood) => {
+    return {
+        date: journalDate,
+        concept: concepts,
+        entry: journalEntry,
+        mood: mood
     }
-]
-
-
-
-const makeJournalEntryComponent = (title, date, contents) => {
-    return `
-        <h1>${title}</h1>
-        <h2>${date}</h2>
-        </h3>${contents}</h3>
-    `
 }
 
+// add event listener collection the value inputs
+recordEntryBtn.addEventListener("click", function () {
+    const journalDate  = document.querySelector("#journalDate").value
+    const concepts = document.querySelector("#concepts").value
+    const journalEntry = document.querySelector("#journalEntry").value
+    const mood = document.querySelector("#mood").value
+    
+    console.log(journalEntry, concepts, mood)
+    
+    const newJournalEntry = createJournalEntry(journalDate, concepts, journalEntry, mood)
+    API.saveEntryToAPI(newJournalEntry).then(API.getJournalEntries).then(domEntries.renderJournalEntriesToDom)
+    })
 
 
-    // for (const journalEntry of journalEntries){
-    //     const journalContainer = document.querySelector("#entrylog")
-    //     journalContainer.innerHTML = makeJournalEntryComponent()
-    // }
+    
 
-    const renderJournalEntries = (entries) => {
-        for (const journalEntry of journalEntries){
-
-        
-
-        const journalContainer = document.querySelector(".entryLog")
-        journalContainer.innerHTML += makeJournalEntryComponent(
-            journalEntry.title,
-            journalEntry.date,
-            journalEntry.contents)
-        }
-    }
-
-    console.log(journalEntries)
-    renderJournalEntries(journalEntries)
+    
 
 
 
 
-// const makeJournalEntryComponent = () => {
-//     return `
-//     <h1>Array Methods</h1>
-//     <h2>We learned about array methods, but only for Each made sense.</h2>
-//     <h2>07/24/2019</h2>
-//     `
-// }
 
 
-// const renderDom = document.querySelector(".entryLog")
-// renderDom.innerHTML = makeJournalEntryComponent()
+
+
+    
+
+    
+
+
+
+
+
 
 
    
