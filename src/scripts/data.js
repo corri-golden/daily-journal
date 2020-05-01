@@ -25,6 +25,13 @@ getJournalEntries () {
             .then(response => response.json())
     },
 
+deleteEntry (entryId) {
+    return fetch(`http://localhost:3000/entries/${entryId}`, {
+    method: "DELETE"
+    })
+        .then(response => response.json())
+},
+
 saveEntryToAPI(newJournalEntry){
         return fetch("http://localhost:3000/entries", {
         method: "POST",
