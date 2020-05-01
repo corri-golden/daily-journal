@@ -1,10 +1,11 @@
 import API from "./data.js"
 import domEntries from "./entriesDOM.js"
+import events from "./eventListeners.js"
 
 
 
 
-
+events.registerDeleteListener()
 
 
 
@@ -59,6 +60,11 @@ recordEntryBtn.addEventListener("click", function () {
     const newJournalEntry = createJournalEntry(journalDate, concepts, journalEntry, mood)
     API.saveEntryToAPI(newJournalEntry).then(API.getJournalEntries).then(domEntries.renderJournalEntriesToDom)
     })
+
+
+
+// Invoke the method that attaches the event listener
+
 
 
     
