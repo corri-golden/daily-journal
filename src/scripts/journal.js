@@ -7,7 +7,7 @@ import events from "./eventListeners.js"
 
 events.registerDeleteListener()
 
-
+events.registerEditListener()
 
 /*
     Main application logic that uses the functions and objects

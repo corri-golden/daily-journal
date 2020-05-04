@@ -32,6 +32,11 @@ deleteEntry (entryId) {
         .then(response => response.json())
 },
 
+getSingleJournalEntry(entryId) {
+    // GET the journal entry with the specified ID number
+    return fetch(`http://localhost:3000/entries/${entryId}` )
+},
+
 saveEntryToAPI(newJournalEntry){
         return fetch("http://localhost:3000/entries", {
         method: "POST",

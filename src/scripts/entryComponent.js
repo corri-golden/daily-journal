@@ -11,6 +11,9 @@ const makeJournalEntryComponent = (journalEntry) => {
         <h2>${journalEntry.date}</h2>
         <h3>${journalEntry.entry}</h3>
         <h3>${journalEntry.mood}</h3>
+        <button id="editEntry--${journalEntry.id}">
+            Edit Journal Entry
+        </button>
         <button id="deleteEntry--${journalEntry.id}">
             Delete Journal Entry
         </button>
