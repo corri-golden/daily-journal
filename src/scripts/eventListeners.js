@@ -42,14 +42,20 @@ export default {
                    console.log(response)
 
                 // Dot notation is used on "response" to get the values of the indicated keys. That value is then assigned to the appropriate tag on the DOM. This populates the form with the entry that needs to be edited.
-                document.querySelector("#concepts").value = response.concepts;
-                document.querySelector("#journalEntry").value = response.journalEntry;
-                document.querySelector("#journalDate").value = response.journalDate;
+                document.querySelector("#entryId").value = response.id
+                document.querySelector("#concepts").value = response.concept;
+                document.querySelector("#journalEntry").value = response.entry;
+                document.querySelector("#journalDate").value = response.date;
                 document.querySelector("#mood").value = response.mood;
+                console.log(response)
                })
             }
             updateFormFields(EntryToEdit)
             }
         })
     }
+            
+
+
+
 }
