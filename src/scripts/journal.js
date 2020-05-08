@@ -1,13 +1,16 @@
 import API from "./data.js"
 import domEntries from "./entriesDOM.js"
 import events from "./eventListeners.js"
+import htmlElements from "./createForm.js"
+// import saveObject from "./saveEntry.js"
 
 
 
-
+htmlElements.buildAndAppendForm()
 events.registerDeleteListener()
 
 events.registerEditListener()
+// saveObject.postEntry()
 
 /*
     Main application logic that uses the functions and objects
@@ -37,29 +40,29 @@ API.getJournalEntries()
 
 //event listener for recording journal entry
 //1st target the element
-const recordEntryBtn = document.querySelector("#recordEntry")
+// const recordEntryBtn = document.querySelector("#recordEntry")
 
-const createJournalEntry = (journalDate, concepts, journalEntry, mood) => {
-    return {
-        date: journalDate,
-        concept: concepts,
-        entry: journalEntry,
-        mood: mood
-    }
-}
+// const createJournalEntry = (journalDate, concepts, journalEntry, mood) => {
+//     return {
+//         date: journalDate,
+//         concept: concepts,
+//         entry: journalEntry,
+//         mood: mood
+//     }
+// }
 
-// add event listener collection the value inputs
-recordEntryBtn.addEventListener("click", function () {
-    const journalDate  = document.querySelector("#journalDate").value
-    const concepts = document.querySelector("#concepts").value
-    const journalEntry = document.querySelector("#journalEntry").value
-    const mood = document.querySelector("#mood").value
+// // add event listener collection the value inputs
+// recordEntryBtn.addEventListener("click", function () {
+//     const journalDate  = document.querySelector("#journalDate").value
+//     const concepts = document.querySelector("#concepts").value
+//     const journalEntry = document.querySelector("#journalEntry").value
+//     const mood = document.querySelector("#mood").value
     
-    console.log(journalEntry, concepts, mood)
+//     console.log(journalEntry, concepts, mood)
     
-    const newJournalEntry = createJournalEntry(journalDate, concepts, journalEntry, mood)
-    API.saveEntryToAPI(newJournalEntry).then(API.getJournalEntries).then(domEntries.renderJournalEntriesToDom)
-    })
+//     const newJournalEntry = createJournalEntry(journalDate, concepts, journalEntry, mood)
+//     API.saveEntryToAPI(newJournalEntry).then(API.getJournalEntries).then(domEntries.renderJournalEntriesToDom)
+//     })
 
 
 

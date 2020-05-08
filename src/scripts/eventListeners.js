@@ -1,5 +1,6 @@
 import API from "./data.js"
 import domEntries from "./entriesDOM.js"
+import defaultElements from "./createForm.js"
 
 
 
@@ -40,6 +41,7 @@ export default {
                API.getSingleJournalEntry(EntryToEdit)
                .then(response => {
                    console.log(response)
+                   defaultElements.buildAndAppendForm("edit")
 
                 // Dot notation is used on "response" to get the values of the indicated keys. That value is then assigned to the appropriate tag on the DOM. This populates the form with the entry that needs to be edited.
                 document.querySelector("#entryId").value = response.id
