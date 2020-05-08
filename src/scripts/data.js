@@ -32,6 +32,12 @@ deleteEntry (entryId) {
         .then(response => response.json())
 },
 
+getSingleJournalEntry(entryId) {
+    // GET the journal entry with the specified ID number
+    return fetch(`http://localhost:3000/entries/${entryId}` )
+        .then(response => response.json())
+},
+
 saveEntryToAPI(newJournalEntry){
         return fetch("http://localhost:3000/entries", {
         method: "POST",
@@ -40,7 +46,16 @@ saveEntryToAPI(newJournalEntry){
         },
         body: JSON.stringify(newJournalEntry)
         })
-    }
+    },
+editSingleJournalEntry(entryId, entry){
+    return fetch(`http://localhost:3000/entries/${entryId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+        })
+    },
 }
 
 
