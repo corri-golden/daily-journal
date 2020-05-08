@@ -46,7 +46,16 @@ saveEntryToAPI(newJournalEntry){
         },
         body: JSON.stringify(newJournalEntry)
         })
-    }
+    },
+editSingleJournalEntry(entryId, entry){
+    return fetch(`http://localhost:3000/entries/${entryId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+        })
+    },
 }
 
 

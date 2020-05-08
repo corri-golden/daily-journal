@@ -7,6 +7,7 @@ import defaultElements from "./createForm.js"
 
 const entryList = document.querySelector("#entryLog")
 
+
 export default {
     registerDeleteListener () {
         entryList.addEventListener("click", event => {
@@ -50,14 +51,41 @@ export default {
                 document.querySelector("#journalDate").value = response.date;
                 document.querySelector("#mood").value = response.mood;
                 console.log(response)
+
+                // After form populates, .scrollTop scrolls to the top of the page where the form is.
+                // .then(document.documentElement.scrollTop = 0)
+
+                const saveChanges = document.querySelector("#saveChanges")
+                // attach event listener to save button
+                saveChanges.addEventListener("click", function (){
+                    // const hiddenEntryId = document.querySelector("#entryId")
+                    // get values of input fields
+                    let entryID = document.querySelector("#entryId").value
+                    const date = document.querySelector("#journalDate").value
+                    const concepts = document.querySelector("#concepts").value
+                    const journalEntry = document.querySelector("#journalEntry").value
+                    const mood = document.querySelector("#mood").value
+
+                    const updatedObject = {
+                        date: date,
+                        concept: concepts,
+                        entry: journalEntry,
+                        mood: mood,
+                    }
+
+                API.editSingleJournalEntry(entryID, updatedObject)
+                    .then(() => {
+                        defaultElements.buildAndAppendForm()
+                        API.getJournalEntries()
+                        .then(response => domEntries.renderJournalEntries(response))
+                    })
+                })
+
+
                })
             }
             updateFormFields(EntryToEdit)
             }
         })
-    }
-            
-
-
-
+    },
 }
