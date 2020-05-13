@@ -12,7 +12,7 @@
 
 
 //Purpose: This file manages API requests
-
+const baseURL = "http://localhost:3000/entries"
 
 // API module, an object containing functions which are called methods when they're inside an object
 const API = {
@@ -56,6 +56,10 @@ editSingleJournalEntry(entryId, entry){
         body: JSON.stringify(entry)
         })
     },
+searchAllJournalEntries(userInput) {
+    return fetch(`${baseURL}??&&q=${userInput}` )
+        .then(response => response.json())
+},
 }
 
 
