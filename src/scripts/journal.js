@@ -5,10 +5,10 @@ import htmlElements from "./createForm.js"
 // import saveObject from "./saveEntry.js"
 
 
-
 htmlElements.buildAndAppendForm()
+htmlElements.buildAndAppendSearch()
 events.registerDeleteListener()
-
+events.searchListener()
 events.registerEditListener()
 // saveObject.postEntry()
 

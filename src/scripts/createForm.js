@@ -29,7 +29,29 @@ const htmlElements = {
                 <option value="Sad">Sad</option>
             </select>
         </fieldset>
-       
+        <fieldset>
+        
+    </form>
+    `
+    // <button id="recordEntry">Record</button>
+    if (entry === "edit") {
+        searchFormContainer.innerHTML = ""
+        searchFormContainer.innerHTML = searchForm += `<div id="buttonContainer"><button id="saveChanges">Save Changes</button></div>`
+    } else {
+        searchFormContainer.innerHTML = ""
+        searchFormContainer.innerHTML = searchForm += `<div id="buttonContainer"><button id="recordEntry">Record New Journal Entry</button></div>`
+        const saveJournalEntryButton = document.querySelector("#recordEntry")
+        saveJournalEntryButton.addEventListener("click", saveObject.postEntry)
+        }
+    },
+    radioButtonsEventListener() {
+
+
+    },
+    buildAndAppendSearch () {
+        //this function builds and append search input
+        const searchHtml = 
+        `
         <!-- Filter by Mood  -->
     <fieldset class="moodFilter">
         <legend>Filter journal entries by mood:</legend>  
@@ -45,18 +67,13 @@ const htmlElements = {
         <label for="Sad">Sad</label>
         </div> 
     </fieldset>
-    </form>
-    `
-    // <button id="recordEntry">Record</button>
-    if (entry === "edit") {
-        searchFormContainer.innerHTML = ""
-        searchFormContainer.innerHTML = searchForm += `<div id="buttonContainer"><button id="saveChanges">Save Changes</button></div>`
-    } else {
-        searchFormContainer.innerHTML = ""
-        searchFormContainer.innerHTML = searchForm += `<div id="buttonContainer"><button id="recordEntry">Record New Journal Entry</button></div>`
-        const saveJournalEntryButton = document.querySelector("#recordEntry")
-        saveJournalEntryButton.addEventListener("click", saveObject.postEntry)
-        }
+        <fieldset>
+            <legend>Search Journal Entries</legend>
+            <input type="search" name="search" id="searchInput"</input>
+        </fieldset>
+        `
+        const searchContainer = document.querySelector("#searchInput")
+        searchContainer.innerHTML = searchHtml
     }
 }
 

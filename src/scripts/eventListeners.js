@@ -6,7 +6,8 @@ import defaultElements from "./createForm.js"
 
 
 const entryList = document.querySelector("#entryLog")
-
+const search = document.querySelector("#searchInput")
+console.log(search)
 
 export default {
     registerDeleteListener () {
@@ -25,6 +26,23 @@ export default {
             }
         })
 
+    },
+    searchListener () {
+        // add an event listener to the search input that search through the entries when you press enter
+        search.addEventListener("keypress", event => {
+            if (event.charCode === 13) {
+                const searchTerm = event.target.value
+                //checking to see if i get the value back
+                // console.log(searchTerm, "searchTerm")
+                API.searchAllJournalEntries(searchTerm)
+                .then(response => {
+                //checking to see if the value is in the api
+                    // console.log(response, "response")
+                    domEntries.renderJournalEntries(response)
+                })
+
+            }
+        })
     },
     registerEditListener () {
         entryList.addEventListener("click", event => {
