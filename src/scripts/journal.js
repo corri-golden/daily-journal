@@ -10,6 +10,7 @@ htmlElements.buildAndAppendSearch()
 events.registerDeleteListener()
 events.searchListener()
 events.registerEditListener()
+events.radioButtonsEventListener()
 // saveObject.postEntry()
 
 

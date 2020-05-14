@@ -52,21 +52,6 @@ const htmlElements = {
         //this function builds and append search input
         const searchHtml = 
         `
-        <!-- Filter by Mood  -->
-    <fieldset class="moodFilter">
-        <legend>Filter journal entries by mood:</legend>  
-        <input type="radio" id="Happy" name="Happy" value="Happy" >
-        <label for="Happy">Happy</label>
-        </div> 
-        <div>
-        <input type="radio" id="fine" name="fine" value="fine" >
-        <label for="fine">Fine</label>
-        </div> 
-        <div>
-        <input type="radio" id="sad" name="sad" value="sad" >
-        <label for="Sad">Sad</label>
-        </div> 
-    </fieldset>
         <fieldset>
             <legend>Search Journal Entries</legend>
             <input type="search" name="search" id="searchInput"</input>

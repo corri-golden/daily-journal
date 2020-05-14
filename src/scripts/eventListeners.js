@@ -7,7 +7,8 @@ import defaultElements from "./createForm.js"
 
 const entryList = document.querySelector("#entryLog")
 const search = document.querySelector("#searchInput")
-console.log(search)
+const radioButtons = document.getElementsByName("Button")
+
 
 export default {
     registerDeleteListener () {
@@ -26,6 +27,33 @@ export default {
             }
         })
 
+    },
+    radioButtonsEventListener () {
+        // .forEach method is used on RadioButtons to add and event listener to each button.
+        radioButtons.forEach((button => {
+        // Event listener waits for a click then executes the function.
+        button.addEventListener("click", event => {
+            // console.log(event, "events")
+        // Calling getJournalEntries from api.js. Returns an array.
+        API.getJournalEntries()
+        // .then waits for the function to resolve then passes the returned data into the next function.
+        .then((response) => {
+            // console.log(response)
+            // .filter method is called on the returned data (response) and the result (which is an array) is stored in a variable. "entry" is taco. 
+            const filterEntries= response.filter((entry) =>{
+            //testing for to get back the moods for each entry
+                // console.log(entry.mood, "entry.mood")
+            // Entries are evaluated to either true or false. True entires are stored in the filterEntries array.
+            return entry.mood === button.id
+        })
+            // renderJournalEntries is called from entriesDOM.js and the filterEntries array is passed as the argument. This renders the filtered entries to the DOM.
+            domEntries.renderJournalEntries(filterEntries)
+            
+        })
+        })
+
+        }))
+        
     },
     searchListener () {
         // add an event listener to the search input that search through the entries when you press enter
